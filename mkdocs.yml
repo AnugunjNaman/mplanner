@@ -1,0 +1,67 @@
+site_name: MPlanner
+repo_url: https://github.com/AnugunjNaman/mplanner
+site_author: Anugunj Naman
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+nav:
+  - MPlanner: index.md
+  - Contributing: contributing.md
+  - Code Reference: reference/
+  - Algorithms: algorithms.md
+  - Example: examples/astar.ipynb
+
+plugins:
+  - mknotebooks
+  - search
+  - autorefs
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py #
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - mkdocstrings
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.arithmatex
+  - pymdownx.tasklist:
+      custom_checkbox: true
+extra_css:
+  - css/termynal.css
+
+extra_javascript:
+  - javascript/termynal.js
+  - javascript/custom.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
